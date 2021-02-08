@@ -1,0 +1,8 @@
+fr/dauphine/heal/HelloServlet.class
+fr/dauphine/heal/AccueilServlet.class
+fr/dauphine/heal/ejb/services/api/UserService.class
+fr/dauphine/heal/LogOutServlet.class
+fr/dauphine/heal/LoginServlet.class
+fr/dauphine/heal/ejb/services/impl/UserServiceImpl.class
+fr/dauphine/heal/beans/UserBean.class
+fr/dauphine/heal/AccueilAdminServlet.class

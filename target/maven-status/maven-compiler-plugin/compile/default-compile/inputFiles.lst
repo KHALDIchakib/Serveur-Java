@@ -1,0 +1,8 @@
+/home/chakib/Bureau/JEE/heal/src/main/java/fr/dauphine/heal/AccueilServlet.java
+/home/chakib/Bureau/JEE/heal/src/main/java/fr/dauphine/heal/HelloServlet.java
+/home/chakib/Bureau/JEE/heal/src/main/java/fr/dauphine/heal/ejb/services/api/UserService.java
+/home/chakib/Bureau/JEE/heal/src/main/java/fr/dauphine/heal/LoginServlet.java
+/home/chakib/Bureau/JEE/heal/src/main/java/fr/dauphine/heal/AccueilAdminServlet.java
+/home/chakib/Bureau/JEE/heal/src/main/java/fr/dauphine/heal/ejb/services/impl/UserServiceImpl.java
+/home/chakib/Bureau/JEE/heal/src/main/java/fr/dauphine/heal/LogOutServlet.java
+/home/chakib/Bureau/JEE/heal/src/main/java/fr/dauphine/heal/beans/UserBean.java
