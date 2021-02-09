@@ -6,6 +6,9 @@
     <persistence-unit name="heal" transaction-type="RESOURCE_LOCAL">
         <non-jta-data-source>java:jboss/datasources/heal</non-jta-data-source>
         <class>fr.dauphine.heal.beans.UserBean</class>
+        <class>fr.dauphine.heal.beans.CentreMedicalBean</class>
+        <class>fr.dauphine.heal.beans.RendezVousBean</class>
+        <class>fr.dauphine.heal.beans.SpecialiteBean</class>
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/heal?useSSL=false"/>
             <property name="javax.persistence.jdbc.user" value="admin"/>

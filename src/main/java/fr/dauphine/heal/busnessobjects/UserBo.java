@@ -1,9 +1,14 @@
 package fr.dauphine.heal.busnessobjects;
 
+import fr.dauphine.heal.beans.ExerceBean;
+import fr.dauphine.heal.beans.RendezVousBean;
 import fr.dauphine.heal.beans.UserBean;
 import org.apache.commons.validator.EmailValidator;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
+import java.util.Set;
 
 public class UserBo {
 
@@ -17,6 +22,9 @@ public class UserBo {
     private String adresse;
     private String type;
     private String statut;
+    private List<RendezVousBean> rendezVousBeansPatient;
+    private List<RendezVousBean> rendezVousBeansMedecin;
+    private List<ExerceBean> exerceBeansMedecin;
 
     public UserBo(UserBean userBean){
         this.id = userBean.getId();
@@ -29,6 +37,12 @@ public class UserBo {
         this.adresse = userBean.getAdresse();
         this.type = userBean.getType();
         this.statut = userBean.getStatut();
+        this.rendezVousBeansPatient = new ArrayList<>();
+        this.rendezVousBeansMedecin = new ArrayList<>();
+        this.exerceBeansMedecin = new ArrayList<>();
+        this.rendezVousBeansPatient.addAll(userBean.getRendezVousBeansPatient());
+        this.rendezVousBeansMedecin.addAll(userBean.getRendezVousBeansMedecin());
+        this.exerceBeansMedecin.addAll(userBean.getExerceBeansMedecin());
     }
 
     public UserBo(String nom, String prenom, String email, String password, String telephone, String anneeNaissence, String adresse, String type, String statut) {
@@ -41,6 +55,9 @@ public class UserBo {
         this.adresse = adresse;
         this.type = type;
         this.statut = statut;
+        this.rendezVousBeansPatient = new ArrayList<>();
+        this.rendezVousBeansMedecin = new ArrayList<>();
+        this.exerceBeansMedecin = new ArrayList<>();
     }
 
     public int getId() {
@@ -121,6 +138,33 @@ public class UserBo {
 
     public void setStatut(String statut) {
         this.statut = statut;
+    }
+
+    public List<RendezVousBean> getRendezVousBeansPatient() {
+        return rendezVousBeansPatient;
+    }
+
+    public void setRendezVousBeansPatient(Set<RendezVousBean> rendezVousBeansPatient) {
+        this.rendezVousBeansPatient.clear();
+        this.rendezVousBeansPatient.addAll(rendezVousBeansPatient);
+    }
+
+    public List<RendezVousBean> getRendezVousBeansMedecin() {
+        return rendezVousBeansMedecin;
+    }
+
+    public void setRendezVousBeansMedecin(Set<RendezVousBean> rendezVousBeansMedecin) {
+        this.rendezVousBeansMedecin.clear();
+        this.rendezVousBeansMedecin.addAll(rendezVousBeansMedecin);
+    }
+
+    public List<ExerceBean> getExerceBeansMedecin() {
+        return exerceBeansMedecin;
+    }
+
+    public void setExerceBeansMedecin(Set<ExerceBean> exerceBeansMedecin) {
+        this.exerceBeansMedecin.clear();
+        this.exerceBeansMedecin .addAll(exerceBeansMedecin);
     }
 
     public boolean validateNom() {

@@ -1,6 +1,8 @@
 package fr.dauphine.heal.beans;
 
 import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table( name = "user")
@@ -37,14 +39,14 @@ public class UserBean {
     @Column(name = "statut")
     private String statut;
 
-    /*
-    @ManyToMany
-    @JoinTable(
-            name = "exerce",
-            joinColumns = @JoinColumn(name = "medecin_id"),
-            inverseJoinColumns = @JoinColumn(name = "centre_id"))
-    Set<Centre> centres;
-    */
+    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<RendezVousBean> rendezVousBeansPatient;
+
+    @OneToMany(mappedBy = "medecin", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<RendezVousBean> rendezVousBeansMedecin;
+
+    @OneToMany(mappedBy = "medecinExerce", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<ExerceBean> exerceBeansMedecin ;
 
     public UserBean(){
     }
@@ -139,5 +141,29 @@ public class UserBean {
 
     public void setStatut(String statut) {
         this.statut = statut;
+    }
+
+    public Set<RendezVousBean> getRendezVousBeansPatient() {
+        return rendezVousBeansPatient;
+    }
+
+    public void setRendezVousBeansPatient(Set<RendezVousBean> rendezVousBeansPatient) {
+        this.rendezVousBeansPatient = rendezVousBeansPatient;
+    }
+
+    public Set<RendezVousBean> getRendezVousBeansMedecin() {
+        return rendezVousBeansMedecin;
+    }
+
+    public void setRendezVousBeansMedecin(Set<RendezVousBean> rendezVousBeansMedecin) {
+        this.rendezVousBeansMedecin = rendezVousBeansMedecin;
+    }
+
+    public Set<ExerceBean> getExerceBeansMedecin() {
+        return exerceBeansMedecin;
+    }
+
+    public void setExerceBeansMedecin(Set<ExerceBean> exerceBeansMedecin) {
+        this.exerceBeansMedecin = exerceBeansMedecin;
     }
 }

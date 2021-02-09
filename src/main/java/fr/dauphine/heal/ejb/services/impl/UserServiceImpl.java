@@ -16,7 +16,7 @@ import java.util.List;
 @TransactionManagement(TransactionManagementType.BEAN)
 public class UserServiceImpl implements UserService {
 
-    @PersistenceUnit(name = "doctolib")
+    @PersistenceUnit(name = "heal")
     EntityManagerFactory emf;
 
 
